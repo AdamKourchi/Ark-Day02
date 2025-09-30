@@ -9,6 +9,3 @@ function reverseString(string $string): string
     return implode($reversed);
 }
 
-
-
-echo reverseString("Hello");

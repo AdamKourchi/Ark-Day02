@@ -1,21 +1,18 @@
 <?php
 function factorial(int $num): void
 {
-    
 
     if ($num < 0) {
-
         echo "Input a positive number";
         return;
     }
 
-        if ($num == 0) {
-
+    if ($num == 0) {
         echo "1";
         return;
     }
 
- $result = $num;
+    $result = $num;
 
     for ($i = $num - 1; $i > 1; $i--) {
 
@@ -23,7 +20,7 @@ function factorial(int $num): void
 
     }
 
-    echo  $result;
+    echo $result;
     return;
 }
 
