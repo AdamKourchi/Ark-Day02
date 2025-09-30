@@ -6,10 +6,11 @@ $cart = [
     ["name" => "Keyboard", "price" => 20, "quantity" => 2]
 ];
 
-function getTotal(array $cart): float
+function getTotal(array $cart): void
 {
 
     $finalTotal = 0;
+    $finalTotalAfterDiscount = 0;
 
     foreach ($cart as $item) {
         $total = $item["price"] * $item["quantity"];
@@ -25,12 +26,15 @@ function getTotal(array $cart): float
 
     if ($finalTotal >= 100) {
 
-        $finalTotal -= 0.1 * $finalTotal;
 
+        $finalTotalAfterDiscount = $finalTotal - 0.1 * $finalTotal;
+
+    }else{
+        $finalTotalAfterDiscount = $finalTotal;
     }
 
 
-    return  $finalTotal;
+    echo "Total before global discount: $finalTotal Total after discounts:  $finalTotalAfterDiscount ";
 }
 
-echo getTotal($cart);
+getTotal($cart);
